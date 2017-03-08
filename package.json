@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/MrIssue/myBlog/issues"
   },
-  "homepage": "https://github.com/MrIssue/myBlog#readme"
+  "homepage": "https://github.com/MrIssue/myBlog#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
 }
