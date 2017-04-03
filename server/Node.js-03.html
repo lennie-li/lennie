@@ -1,0 +1,940 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Node.js-03-ES6、path&fs模块 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Node.js-04.html" />
+    
+    
+    <link rel="prev" href="Node.js-02.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../css/">
+            
+                <a href="../css/">
+            
+                    
+                    css
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../css/css3.html">
+            
+                <a href="../css/css3.html">
+            
+                    
+                    css3
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../framework/">
+            
+                <a href="../framework/">
+            
+                    
+                    framework
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../framework/Angular-01.html">
+            
+                <a href="../framework/Angular-01.html">
+            
+                    
+                    angular-01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../framework/Angular-02.html">
+            
+                <a href="../framework/Angular-02.html">
+            
+                    
+                    angular-02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../framework/Angular-03.html">
+            
+                <a href="../framework/Angular-03.html">
+            
+                    
+                    angular-03
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../framework/模块框架.html">
+            
+                <a href="../framework/模块框架.html">
+            
+                    
+                    seajs&requirejs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../JavaScript/">
+            
+                <a href="../JavaScript/">
+            
+                    
+                    javascript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../JavaScript/AJAX.html">
+            
+                <a href="../JavaScript/AJAX.html">
+            
+                    
+                    ajax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../JavaScript/正则表达式.html">
+            
+                <a href="../JavaScript/正则表达式.html">
+            
+                    
+                    正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../JavaScript/JS运行机制.html">
+            
+                <a href="../JavaScript/JS运行机制.html">
+            
+                    
+                    JS运行机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    server
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="apache安装配置.html">
+            
+                <a href="apache安装配置.html">
+            
+                    
+                    apache安装配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="Node.js-01.html">
+            
+                <a href="Node.js-01.html">
+            
+                    
+                    Node.js-01-安装配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="Node.js-02.html">
+            
+                <a href="Node.js-02.html">
+            
+                    
+                    Node.js-02-基础、模块化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.4" data-path="Node.js-03.html">
+            
+                <a href="Node.js-03.html">
+            
+                    
+                    Node.js-03-ES6、path&fs模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="Node.js-04.html">
+            
+                <a href="Node.js-04.html">
+            
+                    
+                    Node.js-04-http、url、querystring模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="Node.js-05.html">
+            
+                <a href="Node.js-05.html">
+            
+                    
+                    Node.js-05-express
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="Node.js-06.html">
+            
+                <a href="Node.js-06.html">
+            
+                    
+                    Node.js-05-mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../tools/">
+            
+                <a href="../tools/">
+            
+                    
+                    tools
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../tools/Git基础.html">
+            
+                <a href="../tools/Git基础.html">
+            
+                    
+                    git基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../end/">
+            
+                <a href="../end/">
+            
+                    
+                    结束
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Node.js-03-ES6、path&fs模块</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>@(node.js)[javascript, node.js, &#x670D;&#x52A1;&#x5668;]</p>
+<h1 id="nodejs-03-es6&#x8BED;&#x6CD5;path&#x3001;fs&#x6A21;&#x5757;">Node.js-03-ES6&#x8BED;&#x6CD5;&amp;path&#x3001;fs&#x6A21;&#x5757;</h1>
+<h3 id="&#x8BED;&#x6CD5;">&#x8BED;&#x6CD5;</h3>
+<ul>
+<li><p>&#x65B0;&#x7684;&#x53D8;&#x91CF;&#x58F0;&#x660E;&#x65B9;&#x5F0F;</p>
+<ul>
+<li><code>let</code> &#x3001;<code>const</code> &#x65E0;&#x9884;&#x89E3;&#x6790;&#xFF0C;&#x4E0D;&#x53EF;&#x91CD;&#x540D;&#xFF0C;&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#x3002;</li>
+<li>&#x9664;&#x6B64;&#x4EE5;&#x5916;&#xFF1A;<code>const</code>&#x5FC5;&#x987B;&#x5728;&#x58F0;&#x660E;&#x65F6;&#x8FDB;&#x884C;&#x8D4B;&#x503C;&#xFF0C;&#x4E14;&#x4E0D;&#x80FD;&#x6539;&#x53D8;&#xFF08;&#x5E38;&#x91CF;&#xFF09;</li>
+</ul>
+</li>
+<li><p>&#x89E3;&#x6784;&#x8D4B;&#x503C;</p>
+<pre><code>  let { name:str=1, age } = { name: &apos;zhangsan&apos;, age: 18 };
+  console.log(str, age);
+  let [a, b] = [1, [1, 2]];
+  console.log(a, b)
+</code></pre></li>
+<li><p>``&#x6A21;&#x7248;&#x8BED;&#x6CD5; &#x5B57;&#x7B26;&#x4E32;&#x6269;&#x5C55;</p>
+<pre><code>  let data ={
+      name:&apos;lisi&apos;,
+      age:18,
+      gender:&apos;nan&apos;,
+      id:&apos;d13a0b&apos;
+  }
+  var str = `
+      &lt;div&gt;${data.name}&lt;/div&gt;
+      &lt;div&gt;${data.age}&lt;/div&gt;
+      &lt;div&gt;${data.gender}&lt;/div&gt;
+      &lt;input type=&quot;text&quot; value=&quot;${data.id}&quot;/&gt;
+  `;
+  console.log(str);
+</code></pre></li>
+</ul>
+<ul>
+<li><p><code>...data</code></p>
+<ul>
+<li><p>&#x51FD;&#x6570;&#x58F0;&#x660E;&#x65F6;&#x4F7F;&#x7528;&#xFF0C;&#x5C06;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x53D8;&#x6210;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;sum.arguments&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;</p>
+<pre><code>  function sum (...data) {
+      let result = 0;
+      data.forEach(function (v, i) {
+          result += v;
+      });
+      return result;
+  }
+  console.log(sum(1,2,3,4,5,6))
+</code></pre></li>
+<li><p>&#x51FD;&#x6570;&#x8C03;&#x7528;&#x65F6;&#x4F7F;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x4F20;&#x5165;&#x7684;&#x6570;&#x7EC4;&#x8F6C;&#x6362;&#x4E3A;&#x5355;&#x4E2A;&#x7684;&#x5B9E;&#x53C2;&#x6765;&#x4F7F;&#x7528;&#x3002;</p>
+<pre><code>  var arr = [1,2,3];
+  function abc (a,b,c) {
+      return a + b + c;
+  }
+  console.log(abc(...arr));
+</code></pre></li>
+<li><p>&#x6570;&#x7EC4;&#x7684;&#x6269;&#x5C55;</p>
+<pre><code>  let arr1 = [1,2,3];
+  let arr2 = [4,5,6];
+  let resArr = [...arr1,...arr2];
+  console.log(resArr);
+</code></pre></li>
+</ul>
+</li>
+<li><p>&#x7BAD;&#x5934;&#x51FD;&#x6570;</p>
+<ol>
+<li><code>this</code> &#x4E0D;&#x518D;&#x6307;&#x5411;&#x8C03;&#x7528;&#x4ED6;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x662F;&#x6307;&#x5411;&#x58F0;&#x660E;&#x65F6;&#x7684;&#x5BF9;&#x8C61;</li>
+<li>&#x6CA1;&#x6709;<code>arguments</code>&#x5C5E;&#x6027;</li>
+<li><p>&#x4E0D;&#x80FD;<code>new</code>&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4E0D;&#x80FD;&#x5F53;&#x4F5C;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x6B64;&#x65F6;&#x9700;&#x8981;&#x7528;&#x5230;<strong>&#x7C7B;</strong>&#xFF0C;&#x89C1;&#x4E0B;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<ul>
+<li>&#x5355;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5355;&#x4E2A;&#x8BED;&#x53E5;&#x3002;&#x6B64;&#x65F6; <code>()</code> <code>{}</code>&#x5747;&#x53EF;&#x7701;&#x7565; &#xFF0C;&#x540E;&#x90E8;&#x53EA;&#x80FD;&#x662F;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x4E0D;&#x80FD;&#x5199;&#x8BED;&#x53E5;&#xFF08;&#x4E0D;&#x80FD;&#x52A0;&#x5206;&#x53F7;&#xFF09;&#xFF0C;&#x9ED8;&#x8BA4;return&#x540E;&#x90E8;&#x7684;&#x8868;&#x8FBE;&#x5F0F;<pre><code>let foo = a =&gt; a; //let foo = function(a){return a;};
+console.log(foo(1));
+var getSum = (...data) =&gt; {
+  console.log(this);
+  let res = 0;
+  data.forEach((v, i) =&gt; res += v);
+  return res;
+};
+console.log(getSum(1,2,3,4,5,6));
+</code></pre></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>&#x7C7B;&#xFF08;&#x672C;&#x8D28;&#x4E0A;&#x5C31;&#x662F;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF09;</p>
+<ul>
+<li><p>&#x8BED;&#x6CD5;&#xFF1A;&#x4F7F;&#x7528;<code>class</code>&#x5173;&#x952E;&#x5B57;&#xFF0C;<code>static</code>&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x7C7B;&#x540D;&#x6765;&#x8C03;&#x7528;&#x3002;</p>
+<pre><code>class Person {
+  //&#x9759;&#x6001;&#x65B9;&#x6CD5;
+  //&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x7C7B;&#x540D;&#x8C03;&#x7528;&#xFF0C;&#x4E0D;&#x80FD;&#x901A;&#x8FC7;&#x5B9E;&#x4F8B;&#x6765;&#x8C03;&#x7528;
+  static showInfo(){
+      console.log(&apos;Person&apos;)
+  }
+  //&#x6784;&#x9020;&#x51FD;&#x6570;
+  constructor (name,gender){
+      this.name = name;
+      this.gender = gender;
+  }    
+  //&#x65B9;&#x6CD5;
+  showName(){
+      ...
+  }
+  showGender(){
+      ...
+  }
+}
+</code></pre></li>
+<li><p>&#x7EE7;&#x627F;</p>
+<ul>
+<li>&#x4F7F;&#x7528;<code>extends</code>&#x6765;&#x7EE7;&#x627F;&#x7236;&#x7C7B;&#x7684;<code>constructor</code>&#x53CA;&#x65B9;&#x6CD5;&#x3002;</li>
+<li>&#x4F7F;&#x7528;<code>super</code>&#x8C03;&#x7528;&#x7236;&#x7C7B;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;<pre><code>class Student extends Person {
+constructor(name, gende, score){
+  //super&#xFF1A;&#x8C03;&#x7528;&#x7236;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x5FC5;&#x987B;&#x7684;&#xFF0C;&#x5426;&#x5219;&#x540E;&#x9762;&#x4E0D;&#x80FD;&#x548C;&#x4F7F;&#x7528;this
+  super(name, gender);
+  this.score = score; 
+}
+}
+</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x6838;&#x5FC3;&#x6A21;&#x5757;&#xFF1A;path--fs">&#x6838;&#x5FC3;&#x6A21;&#x5757;&#xFF1A;path &amp; fs</h3>
+<ul>
+<li>&#x6838;&#x5FC3;&#x6A21;&#x5757;&#x4E2D;&#xFF0C;&#x901A;&#x5E38;&#x6BCF;&#x79CD;&#x65B9;&#x6CD5;&#x5747;&#x5305;&#x542B;<strong>&#x540C;&#x6B65;</strong>&#x548C;<strong>&#x5F02;&#x6B65;</strong>&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x901A;&#x5E38;&#x4F7F;&#x7528;&#x5F02;&#x6B65;&#x65B9;&#x6CD5;&#xFF0C;&#x907F;&#x514D;&#x963B;&#x585E;&#x3002;</li>
+<li><p>&#x6838;&#x5FC3;&#x6A21;&#x5757; <code>path</code>(&#x8DEF;&#x5F84;&#x76F8;&#x5173;) <code>fs</code>(file system &#x6587;&#x4EF6;&#x64CD;&#x4F5C;&#x76F8;&#x5173;)</p>
+<ul>
+<li><p>&#x4F9D;&#x8D56;nodejs&#x6838;&#x5FC3;&#x6A21;&#x5757;&#xFF0C;&#x4F9D;&#x8D56;&#x65F6;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x5373;&#x53EF;&#x3002;</p>
+<pre><code>  const path = require(&apos;path&apos;);
+  const fs = require(&apos;fs&apos;); //file system
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="api">API</h3>
+<h5 id="&#x57FA;&#x672C;api">&#x57FA;&#x672C;API</h5>
+<ul>
+<li><p>&#x5F02;&#x6B65;&#x65B9;&#x5F0F;&#x67E5;&#x770B;&#x6587;&#x4EF6;/&#x6587;&#x4EF6;&#x5939;&#x7684;&#x4FE1;&#x606F;</p>
+<ul>
+<li><code>let ret = fs.statSync(path)</code> &#x8FD9;&#x662F;&#x540C;&#x6B65;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x6CA1;&#x6709;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x901A;&#x8FC7;&#x8FD4;&#x56DE;&#x503C;&#x67E5;&#x770B;&#x4FE1;&#x606F;&#x3002;</li>
+<li><code>fs.stat(path,callback(&#x62A5;&#x9519;&#x4FE1;&#x606F;,&#x6587;&#x4EF6;&#x4FE1;&#x606F;){});</code></li>
+<li><p>&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x6BD4;&#x8F83;&#x8017;&#x65F6;&#xFF0C;&#x901A;&#x5E38;&#x4F7F;&#x7528;&#x5F02;&#x6B65;&#x7684;&#x65B9;&#x5F0F;</p>
+<pre><code>  fs.stat(path.join(__dirname, &apos;123.js&apos;), (err, stats) =&gt; {
+      console.log(err); //&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;&#x62A5;&#x9519;&#x4FE1;&#x606F;&#xFF0C;&#x5982;&#x8DEF;&#x5F84;&#x9519;&#x8BEF;&#x3002;
+          if(!err){
+              console.log(&apos;&#x6587;&#x4EF6;&#x5B58;&#x5728;&#xFF01;&apos;)
+          } else &#xFF5B;
+              console.log(&apos;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&apos;)
+          &#xFF5D;
+      console.log(stats);//&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x6587;&#x4EF6;&#x7684;&#x4FE1;&#x606F;
+      console.log(&apos;&#x8BBF;&#x95EE;&#x65F6;&#x95F4;&apos; + stats.atime);
+      console.log(&apos;&#x5185;&#x5BB9;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&apos; + stats.mtime);
+      console.log(&apos;&#x6587;&#x4EF6;&#x72B6;&#x6001;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&apos; + stats.ctime);
+      console.log(&apos;&#x521B;&#x5EFA;&#x65F6;&#x95F4;&apos; + stats.birthtime);
+      console.log(stats.isFile());
+      console.log(stats.isDirectory());
+      console.log(2);
+  })
+  console.log(3); //&#x56E0;&#x4E3A;&#x662F;&#x5F02;&#x6B65;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x6240;&#x6709;&#x73B0;dayin 3&#xFF0C;&#x518D;&#x6253;&#x5370;2.
+</code></pre></li>
+</ul>
+</li>
+<li><p><code>exists()</code> &#x5224;&#x65AD;&#x6587;&#x4EF6;&#x5B58;&#x5728;&#x6027;&#xFF0C;&#x5B98;&#x65B9;&#x4E0D;&#x63A8;&#x8350;&#x4F7F;&#x7528;</p>
+</li>
+<li><p><code>fs.access(path[,mode],callback)</code></p>
+<ul>
+<li>&#x53C2;&#x6570;&#xFF1A;<code>mode</code> &#x6539;&#x53D8;&#x6587;&#x4EF6;&#x53EF;&#x8BFB;&#x53EF;&#x5199;&#x7B49;&#xFF0C;&#x8EB2;&#x5728;linux&#x7CFB;&#x7EDF;&#x4E2D;&#x4F7F;&#x7528;&#xFF0C;windows&#x5B58;&#x5728;&#x95EE;&#x9898;&#xFF0C;&#x4E0D;&#x63A8;&#x8350;&#x4F7F;&#x7528;</li>
+<li><p>&#x4E0D;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;open&#x65B9;&#x6CD5;&#x5373;&#x53EF;&#xFF0C;&#x4E86;&#x89E3;</p>
+<pre><code>  fs.access(path.join(__dirname,&apos;1.js&apos;), (err) =&gt; {
+      console.log(err);
+  });
+</code></pre></li>
+</ul>
+</li>
+<li><p>&#x6253;&#x5F00;&#x5E76;&#x8BFB;&#x53D6;</p>
+<ul>
+<li><code>open(path,flag[,mode],callback)</code></li>
+<li><code>flag</code> &#x6807;&#x8BC6;&#x7B26;&#xFF0C;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;r===&gt;read w===&gt;write &#x5177;&#x4F53;&#x53EF;&#x9009;&#x53C2;&#x6570;&#x89C1;&#x6587;&#x6863;</li>
+<li><p>&#x540C;&#x6B65;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x503C;&#x4E3A;fd</p>
+<pre><code>  fs.open(path.join(__dirname,&apos;data.txt&apos;),&apos;r&apos;,(err, fd) =&gt; {
+      //fd file discriptor &#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#xFF0C;&#x901A;&#x8FC7;fd&#x53EF;&#x4EE5;&#x64CD;&#x4F5C;&#x6587;&#x4EF6;&#xFF0C;&#x9ED8;&#x8BA4;&#x4ECE;3&#x5F00;&#x59CB;&#xFF0C;&#x6253;&#x5F00;&#x591A;&#x6B21;&#x63A5;&#x7740;&#x7D2F;&#x52A0;
+      //fd &#x5C31;&#x7C7B;&#x4F3C;&#x4E8E;timer = setInterval()&#x4E2D;&#x7684;timer&#xFF0C;&#x6307;&#x5411;&#x6587;&#x4EF6;&#x3002;
+      console.log(err, fd);
+      //        fd  &#x7A7A;&#x95F4;    &#x8D77;&#x59CB;&#x4F4D;  &#x957F;&#x5EA6;    null
+      //fs.read(fd, buffer, offset, length, positon, callback)
+      //&#x628A;&#x4ECE;fd&#x8BFB;&#x53D6;&#x51FA;&#x6765;&#x7684;&#x6570;&#x636E;&#x4E2D; &#x4ECE;&#x7B2C;offset&#x4E2A;&#x5F00;&#x59CB;&#xFF0C;&#x957F;length&#x7684;&#x6570;&#x636E;&#x50A8;&#x5B58;&#x5230;buffer&#x4E2D;
+      let buf = Buffer.alloc(5);
+      fs.read(fd, buf, 0, 3, null, (err,bytes,buffer) =&gt; {
+          //err&#x62A5;&#x9519;&#x4FE1;&#x606F;&#xFF0C;
+          console.log(err,bytes,buffer);
+          console.log(buf);
+          //buf &#x4E0E; buffer &#x6307;&#x5411;&#x540C;&#x4E00;&#x5BF9;&#x8C61;
+          console.log(buf == buffer);
+      });
+  });
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>&#x6253;&#x5F00;&#x5E76;&#x5199;&#x5165; </p>
+<ul>
+<li><p>write1</p>
+<pre><code>  fs.open(path.join(__dirname,&apos;data.txt&apos;),&apos;w&apos;,(err, fd) =&gt; {
+      //fd file discriptor &#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#xFF0C;&#x901A;&#x8FC7;fd&#x53EF;&#x4EE5;&#x64CD;&#x4F5C;&#x6587;&#x4EF6;&#xFF0C;&#x9ED8;&#x8BA4;&#x4ECE;3&#x5F00;&#x59CB;&#xFF0C;&#x6253;&#x5F00;&#x591A;&#x6B21;&#x63A5;&#x7740;&#x7D2F;&#x52A0;
+      //fd &#x5C31;&#x7C7B;&#x4F3C;&#x4E8E;timer = setInterval()&#x4E2D;&#x7684;timer&#xFF0C;&#x6307;&#x5411;&#x6587;&#x4EF6;&#x3002;
+      console.log(err, fd);
+      //        fd  &#x7A7A;&#x95F4;    &#x8D77;&#x59CB;&#x4F4D;  &#x957F;&#x5EA6;    
+      //fs.write(fd, buffer, offset, length[, positon], callback)
+      //&#x628A;buf&#x4E2D;&#x7684;&#x6570;&#x636E; &#x4ECE;&#x7B2C;offset&#x4E2A;&#x5F00;&#x59CB;&#xFF0C;&#x957F;length&#x7684;&#x6570;&#x636E;&#x50A8;&#x5B58;&#x5230;fd&#x4E2D;&#x53BB;
+      let buf = Buffer.from(&apos;lennie&apos;);
+      //written&#x6307;&#x7684;&#x5B57;&#x8282;&#x6570;&#x91CF;&#xFF0C;&#x4E0D;&#x662F;&#x5B57;&#x7B26;&#x6570;&#x91CF;&#xFF01;
+      //&#x4E00;&#x4E2A;&#x4E2D;&#x6587; 3&#x4E2A;&#x5B57;&#x8282; utf-8
+      fs.write(fd, buf, 1, 3, (err,written,buffer) =&gt; {
+          //err&#x62A5;&#x9519;&#x4FE1;&#x606F;&#xFF0C;
+          console.log(err,written,buffer);
+          console.log(buf);
+          //buf &#x4E0E; buffer &#x6307;&#x5411;&#x540C;&#x4E00;&#x5BF9;&#x8C61;
+          console.log(buf == buffer);
+      });
+  });
+</code></pre></li>
+<li><p>write2&#xFF1A;<strong>&#x65B9;&#x6CD5;&#x91CD;&#x8F7D;</strong>  &#x65B9;&#x6CD5;&#x540D;&#x76F8;&#x540C;&#xFF0C;&#x4F46;&#x53C2;&#x6570;&#x4E2A;&#x6570;&#x4E0D;&#x540C;&#xFF0C;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E0D;&#x540C;</p>
+<pre><code>  fs.open(path.join(__dirname,&apos;data.txt&apos;),&apos;w&apos;,(err, fd) =&gt; {
+      //&#x76F4;&#x63A5;&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x5199;&#x5165;fd&#x6307;&#x5411;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x53BB;&#xFF0C;written&#x8868;&#x793A;&#x5B57;&#x7B26;&#x4E32;&#x6240;&#x5360;&#x7684;&#x5B57;&#x8282;&#x6570;
+      fs.write(fd, &apos;&#x7A0B;&#x5E8F;&#x5458;&apos;, (err,written,buffer) =&gt; {
+          console.log(err,written,buffer);
+      });
+  });
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h5 id="&#x7B80;&#x4FBF;&#x65B9;&#x6CD5;&#xFF0C;&#x5E38;&#x7528;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x4F5C;&#x662F;&#x5BF9;&#x4EE5;&#x4E0A;&#x65B9;&#x6CD5;&#x7684;&#x5408;&#x5E76;&#x5C01;&#x88C5;&#x3002;">&#x7B80;&#x4FBF;&#x65B9;&#x6CD5;&#xFF0C;&#x5E38;&#x7528;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x4F5C;&#x662F;&#x5BF9;&#x4EE5;&#x4E0A;&#x65B9;&#x6CD5;&#x7684;&#x5408;&#x5E76;&#x5C01;&#x88C5;&#x3002;</h5>
+<ul>
+<li><p>&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#xFF1A;<code>fs.readFile(file[,options],callback)</code></p>
+<ul>
+<li>&#x540C;&#x6B65;&#x65B9;&#x5F0F;&#x6CA1;&#x6709;<code>callback</code>&#xFF0C;&#x8FD4;&#x56DE;buffer &#x5F62;&#x5F0F; data&#xFF0C;&#x6DFB;&#x52A0;&#x7F16;&#x7801;&#x683C;&#x5F0F;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;data</li>
+<li><p>&#x53C2;&#x6570;&#xFF1A;<code>file</code> &#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#xFF1B;<code>options</code> &#x9009;&#x9879;&#xFF1A;&#x7F16;&#x7801;&#x683C;&#x5F0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&#x7A7A;&#xFF1B;<code>callback(err,data){}</code>&#xFF0C;<code>err</code> &#x62A5;&#x9519;&#x4FE1;&#x606F; &#xFF0C;<code>data</code>&#x8FD4;&#x56DE;&#x8BFB;&#x53D6;&#x5230;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;<code>buffer</code>&#x7C7B;&#x578B;</p>
+<pre><code>  fs.readFile(path.join(__dirname, &apos;data.txt&apos;), (err, data) =&gt; {
+      console.log(data);
+      console.log(data.toString());
+  });
+  fs.readFile(path.join(__dirname, &apos;data.txt&apos;), &apos;utf8&apos;,(err, data) =&gt; {
+      console.log(data);
+      // console.log(data.toString());
+  });
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>&#x5199;&#x5165;&#x6587;&#x4EF6;&#xFF1A;<code>fs.writeFile(file, data[,options],callback)</code></p>
+<ul>
+<li>&#x5F62;&#x5F0F;&#x4E0E;readFile&#x57FA;&#x672C;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#xFF0C;&#x591A;&#x4E00;&#x4E2A;data&#x53C2;&#x6570;&#xFF0C;&#x9700;&#x8981;&#x5199;&#x5165;&#x4EC0;&#x4E48;</li>
+<li><code>fs.writeFile(path.join(__dirname, &apos;data.txt&apos;), &apos;abcdeft&apos;, err =&gt; console.log(err));</code></li>
+</ul>
+</li>
+<li><p>demo&#xFF1A; &#x628A; data &#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x8BFB;&#x53D6;&#x51FA;&#x6765;&#x5E76;&#x653E;&#x5165; data2 &#x4E2D;</p>
+<pre><code>  fs.readFile(path.join(__dirname,&apos;data.txt&apos;),&apos;utf8&apos;,(err,data) =&gt; {
+      fs.writeFile(path.join(__dirname,&apos;data2.txt&apos;),data,(err) =&gt; {
+
+      });
+  });
+</code></pre></li>
+</ul>
+<ul>
+<li><p>&#x8FFD;&#x52A0;&#x5185;&#x5BB9;&#xFF1A;<code>fs.appendFile(file, data[,options],callback)</code></p>
+<ul>
+<li><code>fs.appendFile(path.join(__dirname, &apos;data2.txt&apos;),&apos;lennie&apos;, err =&gt; console.log(err));</code></li>
+</ul>
+</li>
+<li><p>&#x5220;&#x9664; <code>fs.unlink(path, callback)</code></p>
+<ul>
+<li>&#x53EA;&#x80FD;&#x5220;&#x9664;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x94FE;&#x63A5;(&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x540E;&#x7F00;&#x4E3A;lnk&#xFF0C;&#x5FC5;&#x987B;&#x6DFB;&#x52A0;&#x540E;&#x7F00;&#xFF0C;&#x5426;&#x5219;&#x8BA4;&#x4E3A;&#x662F;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x65E0;&#x6CD5;&#x5220;&#x9664;&#xFF0C;&#x62A5;&#x9519;)&#xFF0C;&#x4E0D;&#x80FD;&#x5220;&#x9664;&#x76EE;&#x5F55;</li>
+<li><code>fs.unlink(path.join(__dirname,&apos;to-remove.txt&apos;),err =&gt; console.log(err));</code></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>&#x521B;&#x5EFA;&#x76EE;&#x5F55;&#xFF1A;&#x5224;&#x65AD;&#x8DEF;&#x5F84;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x5C31;&#x521B;&#x5EFA;</p>
+<ul>
+<li><code>fs.mkdir(path.join(__dirname,&apos;newDir&apos;), err =&gt; console.log(err));</code></li>
+</ul>
+</li>
+<li><p>&#x8BFB;&#x53D6;&#x76EE;&#x5F55;</p>
+<ul>
+<li><code>fs.readdir(path[,option],callback</code></li>
+<li><code>option</code> &#x7F16;&#x7801;&#x683C;&#x5F0F; &#x9ED8;&#x8BA4; utf8 </li>
+<li><p><code>fs.readdirSync</code>&#x540C;&#x6B65;&#x65B9;&#x5F0F;&#x6CA1;&#x6709;<code>callback</code>&#xFF0C;&#x8FD4;&#x56DE;&#x503C;&#x4E3A;files</p>
+<pre><code>  fs.readdir(__dirname,(err,files) =&gt; {
+      //file &#x4E3A;&#x6570;&#x7EC4;&#x5F62;&#x5F0F;&#xFF0C;&#x6570;&#x7EC4;&#x5185;&#x4FDD;&#x5B58;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x53CA;&#x6587;&#x4EF6;&#x5939;
+      console.log(files);
+  });
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>&#x5220;&#x9664;&#x76EE;&#x5F55;</p>
+<ul>
+<li><code>rmdir(path,callback)</code></li>
+<li><code>fs.rmdir(path.join(__dirname,&apos;newDir/&apos;), err =&gt; console.log(err));</code></li>
+</ul>
+</li>
+<li><p>&#x6587;&#x4EF6;&#x76D1;&#x89C6;</p>
+<ul>
+<li><code>fs.watchFile(fileName[, options], listener)</code></li>
+<li><code>fileName</code> &#x6587;&#x4EF6;&#x540D; </li>
+<li><code>options</code>(persistent = true , interval = 5007);<ul>
+<li>&#x9ED8;&#x8BA4;<code>persistent=true</code>,&#x4FDD;&#x6301;&#x76D1;&#x63A7; &#xFF1B;<code>interval</code>&#x6BCF;&#x9694;&#x4E00;&#x5B9A;&#x65F6;&#x95F4;&#x68C0;&#x67E5;&#x4E00;&#x6B21;&#xFF0C;&#x9ED8;&#x8BA4;5007ms</li>
+</ul>
+</li>
+<li><p><code>listener</code>&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF1A; <code>curr</code> &#x5F53;&#x524D;&#x72B6;&#x6001;&#xFF0C; <code>pre</code> &#x53D8;&#x5316;&#x4E4B;&#x524D;&#x7684;&#x72B6;&#x6001;</p>
+<pre><code>  fs.watchFile(path.join(__dirname, &apos;data.txt&apos;), {interval : 100}, (curr, pre) =&gt; {
+      console.log(curr);
+      console.log(pre);
+  });
+</code></pre></li>
+</ul>
+</li>
+<li><p>&#x6587;&#x4EF6;&#x76D1;&#x89C6;&#x89E3;&#x7ED1; </p>
+<ul>
+<li><code>fs.unwatchFile(filename[, listener])</code></li>
+<li><p>&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x76D1;&#x542C;&#x51FD;&#x6570;&#x90FD;&#x89E3;&#x7ED1;  &#xFF0C;&#x6307;&#x5B9A;<code>listener</code>&#x76D1;&#x542C;&#x51FD;&#x6570;&#x540D;&#xFF0C;&#x53EF;&#x89E3;&#x7ED1;&#x6307;&#x5B9A;&#x7684;&#x6478;&#x4E00;&#x4E2A;&#x76D1;&#x542C;&#x51FD;&#x6570;&#x3002;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x9700;&#x8981;&#x5728;<code>watchFile</code>&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x7ED1;&#x5B9A;&#x76D1;&#x542C;&#x51FD;&#x6570;&#x65F6;&#x4F7F;&#x7528;&#x53D8;&#x91CF;&#x4EE3;&#x66FF;&#x51FD;&#x6570;&#x3002;&#x5177;&#x4F53;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>  let cb = (curr, pre) =&gt; {
+      console.log(curr);
+      console.log(pre);
+  };
+  fs.watchFile(path.join(__dirname, &apos;data.txt&apos;), {interval : 100}, cb);
+  setTimeout(function () {
+      fs.unwatchFile(path.join(__dirname, &apos;data.txt&apos;),cb);
+  },5000);
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>&#x76D1;&#x542C;&#x76EE;&#x5F55;<ul>
+<li>fs.watch(filename[, option][, listener])</li>
+<li>&#x4E0D;&#x540C;&#x7CFB;&#x7EDF;&#x7684;&#x6587;&#x4EF6;&#x4FEE;&#x6539;&#x521B;&#x5EFA;&#x7B49;&#x64CD;&#x4F5C;&#x7684;&#x5E95;&#x5C42;&#x5B9E;&#x73B0;&#x4E0D;&#x592A;&#x76F8;&#x540C;&#xFF0C;&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x7684;&#x8868;&#x73B0;&#x6548;&#x679C;&#x4E0D;&#x592A;&#x76F8;&#x540C;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#x7684;&#x5305;<code>chokidar</code>&#x6765;&#x89E3;&#x51B3;&#x4E0D;&#x540C;&#x7CFB;&#x7EDF;&#x7684;&#x517C;&#x5BB9;&#x6027;&#x95EE;&#x9898;&#xFF0C;&#x4F7F;&#x5176;&#x8868;&#x73B0;&#x4E00;&#x81F4;&#x3002;</li>
+<li>&#x4F7F;&#x7528;<code>chokidar</code>&#x5305;&#x6765;&#x4EE3;&#x66FF;&#x539F;&#x751F;&#x7684;<code>watch</code>&#x65B9;&#x6CD5;;</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>&#x5927;&#x578B;&#x6587;&#x4EF6;&#x7684;&#x8BFB;&#x53D6;&#xFF1A;&#x6587;&#x4EF6;&#x7684;&#x6D41;&#x5F0F;&#x64CD;&#x4F5C;</p>
+<ul>
+<li>&#x6587;&#x4EF6;&#x7684;&#x8BFB;&#x53D6;&#x590D;&#x5236;&#x5DE5;&#x4F5C;&#x9700;&#x8981;&#x5360;&#x7528;&#x5185;&#x5B58;&#xFF0C;&#x5927;&#x578B;&#x6587;&#x4EF6;&#x76F4;&#x63A5;&#x901A;&#x8FC7;<code>readFile</code>&#x548C;<code>writeFile</code>&#x6765;&#x6267;&#x884C;&#x4F1A;&#x5360;&#x7528;&#x5927;&#x91CF;&#x5185;&#x5B58;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x6D41;&#x5F0F;&#x64CD;&#x4F5C;&#x6765;&#x5B8C;&#x6210;&#x3002;</li>
+<li><code>creatReadStream(path[, option])  creatWriteStream(path[, option])</code></li>
+<li><p>&#x8DEF;&#x5F84;&#x4E2D;&#xFF1A;<code>\</code>&#x4E3A;&#x8F6C;&#x4E49;&#x7B26;  &#x9700;&#x8981;&#x8FDB;&#x884C;&#x8F6C;&#x4E49; &#x6545;&#x4F7F;&#x7528;<code>\\</code></p>
+<pre><code>  //&#x5C06;&#x8DEF;&#x5F84;&#x7528;&#x53D8;&#x91CF;&#x4FDD;&#x5B58;
+  let sourcePath = &apos;D:\\study\\lesson\\17-nodejs-day3&#xFF08;ES6&#xFF09;\\exec\\1.js&apos;;
+  let targetPath = &apos;D:\\study\\lesson\\17-nodejs-day3&#xFF08;ES6&#xFF09;\\exec\\1-copy.js&apos;;
+  //&#x83B7;&#x53D6;&#x8BFB;&#x5199;&#x6D41; stream
+  let readStream = fs.createReadStream(sourcePath);
+  let writeStream = fs.createWriteStream(targetPath);
+  //&#x68C0;&#x67E5;&#x6267;&#x884C;&#x4E86;&#x591A;&#x5C11;&#x6B21; data &#x4E8B;&#x4EF6;&#x540E;&#x5B8C;&#x6210;&#x4E86;&#x590D;&#x5236;&#x7684;&#x8FC7;&#x7A0B;
+  let num = 1;
+  //&#x57FA;&#x4E8E;&#x4E8B;&#x4EF6;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;
+  //data&#x4E8B;&#x4EF6;&#xFF0C;readStream&#x6BCF;&#x62FF;&#x5230;&#x4E00;&#x6B21;&#x6570;&#x636E;&#x5C31;&#x89E6;&#x53D1;
+  //chunk [t&#x283;&#x28C;&#x14B;k] &#x539A;&#x5757;&#xFF0C;&#x5927;&#x5757;
+  readStream.on(&apos;data&apos;, (chunk) =&gt; {
+      num++;
+      writeStream.write(chunk);
+  });
+  //&#x6570;&#x636E;&#x8BFB;&#x53D6;&#x5B8C;&#x6BD5;&#x540E;&#xFF0C;&#x89E6;&#x53D1;end&#x4E8B;&#x4EF6;
+  readStream.on(&apos;end&apos;, () =&gt; {
+      //&#x6587;&#x4EF6;&#x8F83;&#x5C0F;&#xFF0C;2&#x6B21;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x590D;&#x5236;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x5927;&#x578B;&#x6587;&#x4EF6;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x6210;&#x5343;&#x4E0A;&#x4E07;&#x6B21;&#x3002;
+      console.log(&apos;over&apos; + num);//2
+  });
+</code></pre></li>
+<li><p>&#x6570;&#x636E;&#x6D41;&#x8BFB;&#x5199;&#x4F18;&#x5316;&#xFF1A;&#x4E0A;&#x8FF0;&#x65B9;&#x6CD5;&#x8BFB;&#x5199;&#x901F;&#x5EA6;&#x4E0D;&#x4E00;&#x5B9A;&#x5339;&#x914D;</p>
+<pre><code>  let sourcePath = &apos;D:\\&#x4F20;&#x667A;&#x64AD;&#x5BA2;\\&#x5C31;&#x4E1A;&#x73ED;\\&#x8BFE;&#x7A0B;\\17-nodejs-&#x7B2C;03&#x5929;&#xFF08;ES6&#xFF09;\\exec\\1.js&apos;;
+  let targetPath = &apos;D:\\&#x4F20;&#x667A;&#x64AD;&#x5BA2;\\&#x5C31;&#x4E1A;&#x73ED;\\&#x8BFE;&#x7A0B;\\17-nodejs-&#x7B2C;03&#x5929;&#xFF08;ES6&#xFF09;\\exec\\1-copy.js&apos;;
+  let readStream = fs.createReadStream(sourcePath);
+  let writeStream = fs.createWriteStream(targetPath);
+  //&#x5C06;read&#x548C;write&#x8FDE;&#x63A5;&#x8D77;&#x6765;&#xFF0C;&#x5B8C;&#x6210;&#x8FB9;&#x8BFB;&#x8FB9;&#x5199;&#x7684;&#x529F;&#x80FD;
+  readStream.pipe(writeStream);
+</code></pre></li>
+<li><p>&#x4E0A;&#x8FF0;&#x8FDB;&#x4E00;&#x6B65;&#x7B80;&#x5199;&#x4E3A;&#xFF1A;<code>fs.createReadStream(sourcePath).pipe(fs.createWriteStream(targetPath));</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>&#x547D;&#x4EE4;&#x884C;&#x64CD;&#x4F5C;&#x6A21;&#x5757; <code>readline</code><ul>
+<li>&#x547D;&#x4EE4;&#x884C;&#x76F8;&#x5173;&#x7684;&#x64CD;&#x4F5C;</li>
+<li>const readline = require(&apos;readline&apos;);</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Node.js-02.html" class="navigation navigation-prev " aria-label="Previous page: Node.js-02-基础、模块化">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Node.js-04.html" class="navigation navigation-next " aria-label="Next page: Node.js-04-http、url、querystring模块">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Node.js-03-ES6、path&fs模块","level":"1.5.4","depth":2,"next":{"title":"Node.js-04-http、url、querystring模块","level":"1.5.5","depth":2,"path":"server/Node.js-04.md","ref":"server/Node.js-04.md","articles":[]},"previous":{"title":"Node.js-02-基础、模块化","level":"1.5.3","depth":2,"path":"server/Node.js-02.md","ref":"server/Node.js-02.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"server/Node.js-03.md","mtime":"2017-04-03T22:15:19.530Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-03T22:26:27.943Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
