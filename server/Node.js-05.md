@@ -194,6 +194,7 @@ app.listen(3000, () => {
 
 1. 后端模版引擎 EJS  jade(更名为pug)  smarty（php）
 2. artTemplate
+
 3. 使用方法与artTemplate基本完全相同 双大括号 => <%= %> <%- %> <% %>
 
 - express 原生支持的模版引擎 配置：
@@ -218,6 +219,7 @@ app.set('view engine', 'ejs');
 	res.render('index', data);
 }
 ```
+
 
 
 
