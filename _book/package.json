@@ -1,0 +1,29 @@
+{
+  "name": "myblog",
+  "version": "1.0.0",
+  "description": "myBlog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrIssue/myBlog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrIssue/myBlog/issues"
+  },
+  "homepage": "https://github.com/MrIssue/myBlog#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}
+install --save bootstrap
+
+--save-dev 
